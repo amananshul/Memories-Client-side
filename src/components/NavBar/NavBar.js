@@ -14,6 +14,7 @@ import memoriesText from '../../images/memoriesText.png';
 import memoriesLogo from '../../images/memoriesLogo.png';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
+import { Nou } from './Nou';
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -64,17 +65,7 @@ const Navbar = () => {
     </Button>
         )}
       </Toolbar>
-      <NovuProvider
-        subscriberId={'66323277868b8f1418e12f53'}
-        applicationIdentifier={'hs2r04wGfG3g'}
-      >
-        <PopoverNotificationCenter>
-          {({ unseenCount }) => {
-            console.log('unseenCount',unseenCount)
-            return <NotificationBell unseenCount={unseenCount} />
-          }}
-        </PopoverNotificationCenter>
-      </NovuProvider>
+     <Nou/>
     </AppBar>
   );
 };

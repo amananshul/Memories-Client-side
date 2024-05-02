@@ -56,7 +56,7 @@ export const createPost = (post, navigate) => async (dispatch) => {
 
     dispatch({ type: CREATE, payload: data });
     dispatch({ type: END_LOADING });
-    navigate(`/posts/${data._id}`);
+    navigate(-1);
   } catch (error) {
         //console.log(error);
   }
