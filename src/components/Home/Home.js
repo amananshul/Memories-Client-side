@@ -28,7 +28,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const searchPost = () => {
-    console.log('search',search)
+        //console.log('search',search)
     if (search || tags) {
       dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
       navigate(`/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);

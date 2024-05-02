@@ -7,7 +7,7 @@ export const signUp=(formData,navigate)=>async(dispatch)=>{
     dispatch({type:AUTH,data})
     navigate('/')
  } catch (error) {
-    console.log('error',error)
+        //console.log('error',error)
     
  }
 }
@@ -17,7 +17,7 @@ export const signIn=(formData,navigate)=>async(dispatch)=>{
       dispatch({type:AUTH,data})
       navigate('/')
    } catch (error) {
-      console.log('error',error)
+          //console.log('error',error)
       
    }
 

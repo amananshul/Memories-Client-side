@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af82f668.chunk.css",
+    "main.js": "/static/js/main.de54d1e3.chunk.js",
+    "main.js.map": "/static/js/main.de54d1e3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7e6e88a6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7e6e88a6.js.map",
+    "static/js/2.43625fb1.chunk.js": "/static/js/2.43625fb1.chunk.js",
+    "static/js/2.43625fb1.chunk.js.map": "/static/js/2.43625fb1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cb275098532f282dc24ae493e47935b9.js": "/precache-manifest.cb275098532f282dc24ae493e47935b9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.af82f668.chunk.css.map": "/static/css/main.af82f668.chunk.css.map",
+    "static/js/2.43625fb1.chunk.js.LICENSE.txt": "/static/js/2.43625fb1.chunk.js.LICENSE.txt",
+    "static/media/memories.png": "/static/media/memories.5c0c63fb.png",
+    "static/media/memoriesLogo.png": "/static/media/memoriesLogo.e342bbed.png",
+    "static/media/memoriesText.png": "/static/media/memoriesText.fcbcfa5a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e6e88a6.js",
+    "static/js/2.43625fb1.chunk.js",
+    "static/css/main.af82f668.chunk.css",
+    "static/js/main.de54d1e3.chunk.js"
+  ]
+}

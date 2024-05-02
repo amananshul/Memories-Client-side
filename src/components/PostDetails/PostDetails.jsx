@@ -40,7 +40,7 @@ const Post = () => {
       </Paper>
     );
   }
-  console.log("posts", posts);
+      //console.log("posts", posts);
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (

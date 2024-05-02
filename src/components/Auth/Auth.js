@@ -31,7 +31,7 @@ const Auth = () => {
         }
   };
 
-  const googleError = (error) => console.log('Google Sign In was unsuccessful',error);
+  // const googleError = (error) => console.log('Google Sign In was unsuccessful',error);
 
     const switchMode = () => {
         // setForm(initialState);

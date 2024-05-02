@@ -20,7 +20,8 @@ const Form = ({ currentId, setCurrentId }) => {
     setCurrentId(0);
     setPostData({ title: '', message: '', tags: [], selectedFile: '' });
   };
-
+  const {  isLoading } = useSelector((state) => state.posts);
+      //console.log('isLoading',isLoading)
   useEffect(() => {
     if (!post?.title) clear();
     if (post) setPostData(post);
@@ -34,7 +35,7 @@ const Form = ({ currentId, setCurrentId }) => {
       clear();
     } else {
       dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
-      clear();
+    
     }
   };
 
@@ -49,6 +50,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   const handleAddChip = (tag) => {
+        //console.log(tag)
     setPostData({ ...postData, tags: [...postData.tags, tag] });
   };
 
@@ -74,7 +76,7 @@ const Form = ({ currentId, setCurrentId }) => {
           />
         </div>
         <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
-        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+        <Button disa className={classes.buttonSubmit}disabled={isLoading} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
     </Paper>

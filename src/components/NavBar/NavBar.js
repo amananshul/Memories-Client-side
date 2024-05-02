@@ -3,6 +3,11 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import jwtDecode from 'jwt-decode'
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell,
+} from "@novu/notification-center";
 
 import memories from '../../images/memories.png';
 import memoriesText from '../../images/memoriesText.png';
@@ -30,7 +35,7 @@ const Navbar = () => {
     const token = user?.token;
     if (token) {
       const decodedToken = jwtDecode(token);
-      console.log('token',decodedToken)
+          //console.log('token',decodedToken)
 
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
@@ -59,6 +64,17 @@ const Navbar = () => {
     </Button>
         )}
       </Toolbar>
+      <NovuProvider
+        subscriberId={'66323277868b8f1418e12f53'}
+        applicationIdentifier={'hs2r04wGfG3g'}
+      >
+        <PopoverNotificationCenter>
+          {({ unseenCount }) => {
+            console.log('unseenCount',unseenCount)
+            return <NotificationBell unseenCount={unseenCount} />
+          }}
+        </PopoverNotificationCenter>
+      </NovuProvider>
     </AppBar>
   );
 };

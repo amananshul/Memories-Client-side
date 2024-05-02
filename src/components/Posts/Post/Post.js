@@ -18,7 +18,7 @@ const Post = ({ post, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem('profile'));
 
   const Likes = () => {
-    if (post.likes.length > 0) {
+    if (post?.likes?.length > 0) {
       return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
         ? (
           <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</>
@@ -48,7 +48,15 @@ const openPost=()=>navigate(`/posts/${post._id}`)
       </div>
       {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
       <div className={classes.overlay2}>
-        <Button onClick={() => setCurrentId(post._id)} style={{ color: 'white' }} size="small">
+        <Button
+            className="edit-button" // Add a class for targeting the edit button
+            onClick={(event) => {
+              event.stopPropagation(); // Prevent parent onClick from firing
+              setCurrentId(post._id);
+            }}
+            style={{ color: 'white' }}
+            size="small"
+          >
           <EditIcon fontSize="default" />
         </Button>
       </div>
